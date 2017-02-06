@@ -14,6 +14,7 @@ UTIL_LOG=${UTIL}/log
 .	${UTIL}/bin/devel.sh
 .	${UTIL}/bin/usage.sh
 .	${UTIL}/bin/check_root.sh
+.	${UTIL}/bin/check_tool.sh
 .	${UTIL}/bin/logging.sh
 .	${UTIL}/bin/load_conf.sh
 .	${UTIL}/bin/load_util_conf.sh
@@ -28,7 +29,7 @@ GEN_CC_MODULE_LOG=${GEN_CC_MODULE_HOME}/log
 
 declare -A GEN_CC_MODULE_USAGE=(
 	[USAGE_TOOL]="__${GEN_CC_MODULE_TOOL}"
-	[USAGE_ARG1]="[MODULE NAME] Name of module"
+	[USAGE_ARG1]="[MODULE NAME] Name of C++ module"
 	[USAGE_EX_PRE]="# Example generating module-pair (source+header file)"
 	[USAGE_EX]="__${GEN_CC_MODULE_TOOL} GTKMyOption"
 )
@@ -54,7 +55,7 @@ TOOL_NOTIFY="false"
 # @brief  Main function Generate module-pair source and header code
 # @param  Value required module name
 # @retval Function __gen_cc_module exit with integer value
-#			0   - tool finished with success operation 
+#			0   - tool finished with success operation
 #			128 - missing argument(s) from cli
 #			129 - failed to load tool script configuration from files
 #
@@ -97,22 +98,22 @@ function __gen_cc_module() {
 		TOOL_LOG=${config_gen_cc_module[LOGGING]}
 		TOOL_DBG=${config_gen_cc_module[DEBUGGING]}
 		TOOL_NOTIFY=${config_gen_cc_module[EMAILING]}
-		MSG="Generating file [${MNAME}.cc]"
-		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		local SRCF="${MNAME}.cc" SLINE TAB="	"
 		local UMNAME=$(echo ${MNAME} | tr 'a-z' 'A-Z')
 		local ST=${config_gen_cc_module_util[SOURCE_TEMPLATE]}
 		local STF="${GEN_CC_MODULE_HOME}/conf/${ST}"
 		local AUTHOR_NAME=${config_gen_cc_module_util[AUTHOR_NAME]}
 		local AUTHOR_EMAIL=${config_gen_cc_module_util[AUTHOR_EMAIL]}
+		MSG="Generating file [${SRCF}]"
+		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		while read SLINE
 		do
 			eval echo "${SLINE}" >> ${SRCF}
 		done < ${STF}
-		MSG="Generate file [${MNAME}.h]"
-		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
-		local HLINE HT=${config_gen_cc_module_util[HEADER_TEMPLATE]}
+		local HLINE HT=${config_gen_cc_module_util[HEADER_TEMPLATE]} TREE
 		local HTF="${GEN_CC_MODULE_HOME}/conf/${HT}" HEDF="${MNAME}.h"
+		MSG="Generate file [${HEDF}]"
+		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		while read HLINE
 		do
 			eval echo "${HLINE}" >> ${HEDF}
@@ -128,6 +129,12 @@ function __gen_cc_module() {
 		eval "chmod 644 ${SRCF}"
 		eval "chmod 644 ${HEDF}"
 		__info_debug_message "Done" "$FUNC" "$GEN_CC_MODULE_TOOL"
+		TREE=$(which tree)
+		__check_tool "${TREE}"
+		STATUS=$?
+		if [ $STATUS -eq $SUCCESS ]; then
+			eval "${TREE} -L 3 ."
+		fi
 		return $SUCCESS
 	fi
 	__usage GEN_CC_MODULE_USAGE
@@ -138,7 +145,7 @@ function __gen_cc_module() {
 # @brief   Main entry point
 # @param   Value required module name
 # @exitval Script tool gen_cc_module exit with integer value
-#			0   - tool finished with success operation 
+#			0   - tool finished with success operation
 #			127 - run tool script as root user from cli
 #			128 - missing argument(s) from cli
 #			129 - failed to load tool script configuration from files
