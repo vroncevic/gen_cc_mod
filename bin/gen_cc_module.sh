@@ -62,8 +62,8 @@ TOOL_NOTIFY="false"
 # @usage
 # @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #
-# local MNAME="gen_user_name" STATUS
-# __gen_cc_module "${MNAME}"
+# local MN="gen_user_name" STATUS
+# __gen_cc_module "${MN}"
 # STATUS=$?
 #
 # if [ $STATUS -eq $SUCCESS ]; then
@@ -73,8 +73,8 @@ TOOL_NOTIFY="false"
 # fi
 #
 function __gen_cc_module() {
-	local MNAME=$1
-	if [ -n "${MNAME}" ]; then
+	local MN=$1
+	if [ -n "${MN}" ]; then
 		local FUNC=${FUNCNAME[0]} MSG="None" STATUS_CONF STATUS_CONF_UTIL STATUS
 		MSG="Loading basic and util configuration!"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
@@ -98,12 +98,12 @@ function __gen_cc_module() {
 		TOOL_LOG=${config_gen_cc_module[LOGGING]}
 		TOOL_DBG=${config_gen_cc_module[DEBUGGING]}
 		TOOL_NOTIFY=${config_gen_cc_module[EMAILING]}
-		local SRCF="${MNAME}.cc" SLINE TAB="	"
-		local UMNAME=$(echo ${MNAME} | tr 'a-z' 'A-Z')
+		local SRCF="${MN}.cc" T="	" SLINE
+		local UMN=$(echo ${MN} | tr 'a-z' 'A-Z')
 		local ST=${config_gen_cc_module_util[SOURCE_TEMPLATE]}
 		local STF="${GEN_CC_MODULE_HOME}/conf/${ST}"
-		local AUTHOR_NAME=${config_gen_cc_module_util[AUTHOR_NAME]}
-		local AUTHOR_EMAIL=${config_gen_cc_module_util[AUTHOR_EMAIL]}
+		local AN=${config_gen_cc_module_util[AUTHOR_NAME]}
+		local AE=${config_gen_cc_module_util[AUTHOR_EMAIL]}
 		MSG="Generating file [${SRCF}]"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		while read SLINE
@@ -111,7 +111,7 @@ function __gen_cc_module() {
 			eval echo "${SLINE}" >> ${SRCF}
 		done < ${STF}
 		local HLINE HT=${config_gen_cc_module_util[HEADER_TEMPLATE]} TREE
-		local HTF="${GEN_CC_MODULE_HOME}/conf/${HT}" HEDF="${MNAME}.h"
+		local HTF="${GEN_CC_MODULE_HOME}/conf/${HT}" HEDF="${MN}.h"
 		MSG="Generate file [${HEDF}]"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		while read HLINE
