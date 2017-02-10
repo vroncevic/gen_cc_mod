@@ -98,10 +98,9 @@ function __gen_cc_module() {
 		TOOL_LOG=${config_gen_cc_module[LOGGING]}
 		TOOL_DBG=${config_gen_cc_module[DEBUGGING]}
 		TOOL_NOTIFY=${config_gen_cc_module[EMAILING]}
-		local SRCF="${MN}.cc" T="	" SLINE
-		local UMN=$(echo ${MN} | tr 'a-z' 'A-Z')
-		local ST=${config_gen_cc_module_util[SOURCE_TEMPLATE]}
-		local STF="${GEN_CC_MODULE_HOME}/conf/${ST}"
+		local UMN=$(echo ${MN} | tr 'a-z' 'A-Z') SRCF="${MN}.cc" SLINE
+		local ST=${config_gen_cc_module_util[CC_SOURCE]}
+		local STF="${GEN_CC_MODULE_HOME}/conf/${ST}" T="	"
 		local AN=${config_gen_cc_module_util[AUTHOR_NAME]}
 		local AE=${config_gen_cc_module_util[AUTHOR_EMAIL]}
 		MSG="Generating file [${SRCF}]"
@@ -110,7 +109,7 @@ function __gen_cc_module() {
 		do
 			eval echo "${SLINE}" >> ${SRCF}
 		done < ${STF}
-		local HLINE HT=${config_gen_cc_module_util[HEADER_TEMPLATE]} TREE
+		local HLINE HT=${config_gen_cc_module_util[H_HEADER]} TREE
 		local HTF="${GEN_CC_MODULE_HOME}/conf/${HT}" HEDF="${MN}.h"
 		MSG="Generate file [${HEDF}]"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
@@ -118,6 +117,12 @@ function __gen_cc_module() {
 		do
 			eval echo "${HLINE}" >> ${HEDF}
 		done < ${HTF}
+		local CET=${config_gen_cc_module_util[CC_EDIT]}
+		local CETF=$(cat "${GEN_CC_MODULE_HOME}/conf/${CET}")
+		local CEF=".editorconfig"
+		MSG="Generating file [${CEF}]"
+		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
+		echo -e "${CETF}" > "${CEF}"
 		MSG="Set owner!"
 		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		local USRID=${config_gen_cc_module_util[UID]}
@@ -128,6 +133,9 @@ function __gen_cc_module() {
 		__info_debug_message "$MSG" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		eval "chmod 644 ${SRCF}"
 		eval "chmod 644 ${HEDF}"
+		MSG="Generated module ${MN}"
+		GEN_CC_MODULE_LOGGING[LOG_MSGE]=$MSG
+		__logging GEN_CC_MODULE_LOGGING
 		__info_debug_message "Done" "$FUNC" "$GEN_CC_MODULE_TOOL"
 		TREE=$(which tree)
 		__check_tool "${TREE}"
