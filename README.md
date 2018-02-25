@@ -18,7 +18,7 @@ cp -R ~/gen_cc_mod/log/   /root/scripts/gen_cc_mod/ver.1.0/
 
 This module requires these other modules and libraries:
 
-	* sh_util modules are build blocks for bash applications.
+	* sh_util https://github.com/vroncevic/sh_util
 
 ### COPYRIGHT AND LICENCE
 
