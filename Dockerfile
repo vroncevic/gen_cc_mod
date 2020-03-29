@@ -15,4 +15,4 @@
 
 FROM debian:10
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends ddclient tree htop
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends build-essential tree htop
