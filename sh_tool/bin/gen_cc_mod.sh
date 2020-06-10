@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Generate module-pair source and header code (C++)
-# @version ver.1.0
+# @version ver.1.0.0
 # @date    Tue Jan 10 11:37:27 CET 2017
 # @company None, free software to use 2017
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
