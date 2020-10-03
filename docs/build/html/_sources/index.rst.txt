@@ -1,14 +1,14 @@
-GEN_CC_MOD
+gen_cc_mod
 -----------
-
-.. toctree::
- :hidden:
-
- self
 
 **gen_cc_mod** is shell tool for generating C++ modules.
 
 Developed in `bash <https://en.wikipedia.org/wiki/Bash_(Unix_shell)>`_ code: **100%**.
+
+|GitHub shell checker|
+
+.. |GitHub shell checker| image:: https://github.com/vroncevic/gen_cc_mod/workflows/gen_cc_mod%20shell%20checker/badge.svg
+   :target: https://github.com/vroncevic/gen_cc_mod/actions?query=workflow%3A%22gen_cc_mod+shell+checker%22
 
 The README is used to introduce the tool and provide instructions on
 how to install the tool, any machine dependencies it may have and any
@@ -25,7 +25,12 @@ other information that should be provided before the tool is installed.
 .. |Documentation Status| image:: https://readthedocs.org/projects/gen_cc_mod/badge/?version=latest
    :target: https://gen_cc_mod.readthedocs.io/projects/gen_cc_mod/en/latest/?badge=latest
 
-INSTALLATION
+.. toctree::
+    :hidden:
+
+    self
+
+Installation
 -------------
 
 Navigate to release `page`_ download and extract release archive.
@@ -42,13 +47,20 @@ To install **gen_cc_mod** type the following:
    cp -R ~/sh_tool/conf/  /root/scripts/gen_cc_mod/ver.1.0/
    cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.1.0/
 
-DEPENDENCIES
+Or You can use Docker to create image/container.
+
+|GitHub docker checker|
+
+.. |GitHub docker checker| image:: https://github.com/vroncevic/gen_cc_mod/workflows/gen_cc_mod%20docker%20checker/badge.svg
+   :target: https://github.com/vroncevic/gen_cc_mod/actions?query=workflow%3A%22gen_cc_mod+docker+checker%22
+
+Dependencies
 -------------
 
 **gen_cc_mod** requires next modules and libraries:
     sh_util `https://github.com/vroncevic/sh_util <https://github.com/vroncevic/sh_util>`_
 
-SHELL TOOL STRUCTURE
+Shell tool structure
 ---------------------
 
 **gen_cc_mod** is based on MOP.
@@ -70,7 +82,7 @@ Code structure:
    └── log/
        └── gen_cc_mod.log
 
-COPYRIGHT AND LICENCE
+Copyright and licence
 ----------------------
 
 |License: GPL v3| |License: Apache 2.0|
@@ -83,7 +95,7 @@ COPYRIGHT AND LICENCE
 
 Copyright (C) 2017 by `vroncevic.github.io/gen_cc_mod <https://vroncevic.github.io/gen_cc_mod>`_
 
-This tool is free software; you can redistribute it and/or modify it
+**gen_cc_mod** is free software; you can redistribute it and/or modify it
 under the same terms as Bash itself, either Bash version 4.2.47 or,
 at your option, any later version of Bash 4 you may have available.
 

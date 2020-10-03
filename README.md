@@ -4,6 +4,8 @@
 
 Developed in **[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))** code: **100%**.
 
+[![gen_cc_mod shell checker](https://github.com/vroncevic/gen_cc_mod/workflows/gen_cc_mod%20shell%20checker/badge.svg)](https://github.com/vroncevic/gen_cc_mod/actions?query=workflow%3A%22gen_cc_mod+shell+checker%22)
+
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
 other information that should be provided before the modules are installed.
@@ -40,6 +42,8 @@ cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.1.0/
 ![alt tag](https://raw.githubusercontent.com/vroncevic/gen_cc_mod/dev/docs/setup_tree.png)
 
 Or You can use docker to create image/container.
+
+[![gen_cc_mod docker checker](https://github.com/vroncevic/gen_cc_mod/workflows/gen_cc_mod%20docker%20checker/badge.svg)](https://github.com/vroncevic/gen_cc_mod/actions?query=workflow%3A%22gen_cc_mod+docker+checker%22)
 
 ### Usage
 
