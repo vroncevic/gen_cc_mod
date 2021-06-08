@@ -58,6 +58,10 @@
           
             
             
+              <div class="version">
+                1.0
+              </div>
+            
           
 
           
@@ -163,11 +167,11 @@ other information that should be provided before the tool is installed.</p>
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
 <p>Navigate to release <a class="reference external" href="https://github.com/vroncevic/gen_cc_mod/releases">page</a> download and extract release archive.</p>
 <p>To install <strong>gen_cc_mod</strong> type the following:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar xvzf gen_cc_mod-x.y.z.tar.gz
-<span class="nb">cd</span> gen_cc_mod-x.y.z
-cp -R ~/sh_tool/bin/   /root/scripts/gen_cc_mod/ver.1.0/
-cp -R ~/sh_tool/conf/  /root/scripts/gen_cc_mod/ver.1.0/
-cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.1.0/
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tar xvzf gen_cc_mod-x.y.tar.gz
+<span class="nb">cd</span> gen_cc_mod-x.y
+cp -R ~/sh_tool/bin/   /root/scripts/gen_cc_mod/ver.x.y/
+cp -R ~/sh_tool/conf/  /root/scripts/gen_cc_mod/ver.x.y/
+cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.x.y/
 </pre></div>
 </div>
 <p>Or You can use Docker to create image/container.</p>
@@ -184,7 +188,7 @@ cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.1.0/
 <h1>Shell tool structure<a class="headerlink" href="#shell-tool-structure" title="Permalink to this headline">¶</a></h1>
 <p><strong>gen_cc_mod</strong> is based on MOP.</p>
 <p>Code structure:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sh_tool/
 ├── bin/
 │   └── gen_cc_mod.sh
 ├── conf/
