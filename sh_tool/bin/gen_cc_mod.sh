@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # @brief   Generate module-pair source and header code (C++)
-# @version ver.1.0.0
+# @version ver.1.0
 # @date    Tue Jan 10 11:37:27 CET 2017
 # @company None, free software to use 2017
 # @author  Vladimir Roncevic <elektron.ronca@gmail.com>
@@ -56,6 +56,7 @@ TOOL_NOTIFY="false"
 # @param  Value required module name
 # @retval Function __gen_cc_mod exit with integer value
 #            0   - tool finished with success operation
+#            127 - run tool script as root user from cli
 #            128 - missing argument(s) from cli
 #            129 - failed to load tool script configuration from files
 #
@@ -126,8 +127,8 @@ function __gen_cc_mod {
         echo -e "${CETF}" > "${CEF}"
         MSG="Set owner!"
         info_debug_message "$MSG" "$FUNC" "$GEN_CC_MOD_TOOL"
-        local USRID=${config_gen_cc_mod_util[UID]}
-        local GRPID=${config_gen_cc_mod_util[GID]}
+        local USRID=${config_gen_cc_mod_util[USERID]}
+        local GRPID=${config_gen_cc_mod_util[GROUPID]}
         eval "chown ${USRID}.${GRPID} ${SRCF}"
         eval "chown ${USRID}.${GRPID} ${HEDF}"
         MSG="Set permission!"
@@ -153,11 +154,7 @@ function __gen_cc_mod {
 #
 # @brief   Main entry point
 # @param   Value required module name
-# @exitval Script tool gen_cc_mod exit with integer value
-#            0   - tool finished with success operation
-#            127 - run tool script as root user from cli
-#            128 - missing argument(s) from cli
-#            129 - failed to load tool script configuration from files
+# @exitval Script tool gen_cc_mod exit with integer value 0 - 129
 #
 printf "\n%s\n%s\n\n" "${GEN_CC_MOD_TOOL} ${GEN_CC_MOD_VERSION}" "`date`"
 check_root
