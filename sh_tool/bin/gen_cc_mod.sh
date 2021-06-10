@@ -56,7 +56,6 @@ TOOL_NOTIFY="false"
 # @param  Value required module name
 # @retval Function __gen_cc_mod exit with integer value
 #            0   - tool finished with success operation
-#            127 - run tool script as root user from cli
 #            128 - missing argument(s) from cli
 #            129 - failed to load tool script configuration from files
 #
@@ -154,7 +153,11 @@ function __gen_cc_mod {
 #
 # @brief   Main entry point
 # @param   Value required module name
-# @exitval Script tool gen_cc_mod exit with integer value 0 - 129
+# @exitval Script tool gen_cc_mod exit with integer value
+#            0   - tool finished with success operation
+#            127 - run tool script as root user from cli
+#            128 - missing argument(s) from cli
+#            129 - failed to load tool script configuration from files
 #
 printf "\n%s\n%s\n\n" "${GEN_CC_MOD_TOOL} ${GEN_CC_MOD_VERSION}" "`date`"
 check_root
