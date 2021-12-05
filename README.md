@@ -29,9 +29,11 @@ other information that should be provided before the modules are installed.
 
 ### Installation
 
+![Debian Linux OS](https://raw.githubusercontent.com/vroncevic/gen_cc_mod/dev/docs/debtux.png)
+
 Navigate to release **[page](https://github.com/vroncevic/gen_cc_mod/releases)** download and extract release archive.
 
-To install **gen_cc_mod** type the following:
+To install **gen_cc_mod** type the following
 
 ```
 tar xvzf gen_cc_mod-x.y.tar.gz
@@ -41,7 +43,37 @@ cp -R ~/sh_tool/conf/  /root/scripts/gen_cc_mod/ver.x.y/
 cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.x.y/
 ```
 
-![alt tag](https://raw.githubusercontent.com/vroncevic/gen_cc_mod/dev/docs/setup_tree.png)
+Self generated setup script and execution
+```
+./gen_cc_mod_setup.sh 
+
+[setup] installing App/Tool/Script gen_cc_mod
+	Sun 05 Dec 2021 01:32:04 PM CET
+[setup] copy App/Tool/Script structure
+[setup] remove github editor configuration files
+[setup] set App/Tool/Script permission
+[setup] create symbolic link of App/Tool/Script
+[setup] done
+
+/root/scripts/gen_cc_mod/ver.2.0/
+├── bin/
+│   ├── center.sh
+│   ├── display_logo.sh
+│   └── gen_cc_mod.sh
+├── conf/
+│   ├── gen_cc_mod.cfg
+│   ├── gen_cc_mod.logo
+│   ├── gen_cc_mod_util.cfg
+│   └── template/
+│       ├── cc_editorconfig.template
+│       ├── cc_source.template
+│       └── h_header.template
+└── log/
+    └── gen_cc_mod.log
+
+4 directories, 10 files
+lrwxrwxrwx 1 root root 50 Dec  5 13:32 /root/bin/gen_cc_mod -> /root/scripts/gen_cc_mod/ver.2.0/bin/gen_cc_mod.sh
+```
 
 Or You can use docker to create image/container.
 
@@ -58,24 +90,78 @@ export PATH=${PATH}:/root/bin/
 
 # Generating module-pair (source+header file)
 gen_cc_mod GTKMyOption
+
+gen_cc_mod ver.2.0
+Sun 05 Dec 2021 01:33:41 PM CET
+
+[check_root] Check permission for current session? [ok]
+[check_root] Done
+
+    	                                                     
+    	                                                   _ 
+    	  __ _  ___ _ __     ___ ___   _ __ ___   ___   __| |
+    	 / _` |/ _ \ '_ \   / __/ __| | '_ ` _ \ / _ \ / _` |
+    	| (_| |  __/ | | | | (_| (__  | | | | | | (_) | (_| |
+    	 \__, |\___|_| |_|  \___\___| |_| |_| |_|\___/ \__,_|
+    	 |___/                                               
+    	                                                     
+    		Info   github.io/gen_cc_mod ver.2.0 
+    		Issue  github.io/issue
+    		Author vroncevic.github.io
+
+[gen_cc_mod] Loading basic and util configuration!
+100% [================================================]
+
+[load_conf] Loading App/Tool/Script configuration!
+[check_cfg] Checking configuration file [/root/scripts/gen_cc_mod/ver.2.0/conf/gen_cc_mod.cfg] [ok]
+[check_cfg] Done
+
+[load_conf] Done
+
+[load_util_conf] Load module configuration!
+[check_cfg] Checking configuration file [/root/scripts/gen_cc_mod/ver.2.0/conf/gen_cc_mod_util.cfg] [ok]
+[check_cfg] Done
+
+[load_util_conf] Done
+
+[gen_cc_mod] Generating file [GTKMyOption.cc]
+[gen_cc_mod] Generate file [GTKMyOption.h]
+[gen_cc_mod] Generating file [.editorconfig]
+[gen_cc_mod] Set owner!
+[gen_cc_mod] Set permission!
+[logging] Checking directory [/root/scripts/gen_cc_mod/ver.2.0/log/]? [ok]
+[logging] Write info log!
+[logging] Done
+
+[gen_cc_mod] Done
+[check_tool] Checking tool [/usr/bin/tree]? [ok]
+[check_tool] Done
+
+.
+├── GTKMyOption.cc
+└── GTKMyOption.h
+
 ```
 
 ### Dependencies
 
-**gen_cc_mod** requires next modules and libraries:
+**gen_cc_mod** requires next modules and libraries
 * sh_util [https://github.com/vroncevic/sh_util](https://github.com/vroncevic/sh_util)
 
 ### Shell tool structure
 
 **gen_cc_mod** is based on MOP.
 
-Code structure:
+Shell tool structure
 ```
 sh_tool/
 ├── bin/
+│   ├── center.sh
+│   ├── display_logo.sh
 │   └── gen_cc_mod.sh
 ├── conf/
 │   ├── gen_cc_mod.cfg
+│   ├── gen_cc_mod.logo
 │   ├── gen_cc_mod_util.cfg
 │   └── template/
 │       ├── cc_editorconfig.template
@@ -89,7 +175,7 @@ sh_tool/
 
 [![Documentation Status](https://readthedocs.org/projects/gen_cc_mod/badge/?version=latest)](https://gen_cc_mod.readthedocs.io/projects/gen_cc_mod/en/latest/?badge=latest)
 
-More documentation and info at:
+More documentation and info at
 * [https://gen_cc_mod.readthedocs.io/en/latest/](https://gen_cc_mod.readthedocs.io/en/latest/)
 * [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 
