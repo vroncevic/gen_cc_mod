@@ -1,13 +1,13 @@
-name: gen_cc_mod shell checker
+name: gen_cc_mod_shell_checker
 on:
   push:
     branches: [ master ]
     paths:
-      - 'gen_cc_mod/**'
+      - 'sh_tool/**'
   pull_request:
     branches: [ master ]
     paths:
-      - 'gen_cc_mod/**'
+      - 'sh_tool/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,6 +17,6 @@ jobs:
         id: size_checker
         run: |
           modules_ok=0
-          modules=($(find gen_cc_mod/ -type f -name '*.sh' -exec echo '{}' \;))
+          modules=($(find sh_tool/ -type f -name '*.sh' -exec echo '{}' \;))
           for mod in "${modules[@]}"; do line_numbers=$(wc -l < "${mod}"); [[ $line_numbers -gt 300 ]]  && modules_ok=1; done
           [[ $modules_ok -eq 0 ]] && echo ok || exit 1
