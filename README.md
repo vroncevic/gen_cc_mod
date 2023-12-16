@@ -77,8 +77,6 @@ lrwxrwxrwx 1 root root 50 Dec  5 13:32 /root/bin/gen_cc_mod -> /root/scripts/gen
 
 Or You can use docker to create image/container.
 
-[![gen_cc_mod docker checker](https://github.com/vroncevic/gen_cc_mod/workflows/gen_cc_mod%20docker%20checker/badge.svg)](https://github.com/vroncevic/gen_cc_mod/actions?query=workflow%3A%22gen_cc_mod+docker+checker%22)
-
 ### Usage
 
 ```
@@ -98,12 +96,16 @@ Sun 05 Dec 2021 01:33:41 PM CET
 [check_root] Done
 
     	                                                     
-    	                                                   _ 
-    	  __ _  ___ _ __     ___ ___   _ __ ___   ___   __| |
-    	 / _` |/ _ \ '_ \   / __/ __| | '_ ` _ \ / _ \ / _` |
-    	| (_| |  __/ | | | | (_| (__  | | | | | | (_) | (_| |
-    	 \__, |\___|_| |_|  \___\___| |_| |_| |_|\___/ \__,_|
-    	 |___/                                               
+                                                                                      
+                                                                                  ██  
+                                                                                 ░██  
+    █████   █████  ███████         █████   █████        ██████████   ██████      ░██  
+   ██░░░██ ██░░░██░░██░░░██       ██░░░██ ██░░░██      ░░██░░██░░██ ██░░░░██  ██████  
+  ░██  ░██░███████ ░██  ░██      ░██  ░░ ░██  ░░        ░██ ░██ ░██░██   ░██ ██░░░██  
+  ░░██████░██░░░░  ░██  ░██      ░██   ██░██   ██       ░██ ░██ ░██░██   ░██░██  ░██  
+   ░░░░░██░░██████ ███  ░██ █████░░█████ ░░█████  █████ ███ ░██ ░██░░██████ ░░██████  
+    █████  ░░░░░░ ░░░   ░░ ░░░░░  ░░░░░   ░░░░░  ░░░░░ ░░░  ░░  ░░  ░░░░░░   ░░░░░░   
+   ░░░░░                                                                               
     	                                                     
     		Info   github.io/gen_cc_mod ver.2.0 
     		Issue  github.io/issue
@@ -173,17 +175,17 @@ sh_tool/
 
 ### Docs
 
-[![Documentation Status](https://readthedocs.org/projects/gen_cc_mod/badge/?version=latest)](https://gen_cc_mod.readthedocs.io/projects/gen_cc_mod/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/gen_cc_mod/badge/?version=latest)](https://gen-cc-mod.readthedocs.io/projects/gen_cc_mod/en/latest/?badge=latest)
 
 More documentation and info at
-* [https://gen_cc_mod.readthedocs.io/en/latest/](https://gen_cc_mod.readthedocs.io/en/latest/)
+* [https://gen_cc_mod.readthedocs.io/en/latest/](https://gen-cc-mod.readthedocs.io/en/latest/)
 * [https://www.gnu.org/software/bash/manual/](https://www.gnu.org/software/bash/manual/)
 
 ### Copyright and licence
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-Copyright (C) 2017 by [vroncevic.github.io/gen_cc_mod](https://vroncevic.github.io/gen_cc_mod)
+Copyright (C) 2017 - 2024 by [vroncevic.github.io/gen_cc_mod](https://vroncevic.github.io/gen_cc_mod)
 
 **gen_cc_mod** is free software; you can redistribute it and/or modify
 it under the same terms as Bash itself, either Bash version 4.2.47 or,
