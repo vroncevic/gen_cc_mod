@@ -2,8 +2,12 @@ name: gen_cc_mod shell checker
 on:
   push:
     branches: [ master ]
+    paths:
+      - 'gen_cc_mod/**'
   pull_request:
     branches: [ master ]
+    paths:
+      - 'gen_cc_mod/**'
 jobs:
   build:
     runs-on: ubuntu-latest
