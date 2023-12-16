@@ -6,7 +6,7 @@
 
 Developed in **[bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell))** code: **100%**.
 
-[![gen_cc_mod shell checker](https://github.com/vroncevic/gen_cc_mod/workflows/gen_cc_mod%20shell%20checker/badge.svg)](https://github.com/vroncevic/gen_cc_mod/actions?query=workflow%3A%22gen_cc_mod+shell+checker%22)
+[![gen_cc_mod_shell_checker](https://github.com/vroncevic/gen_cc_mod/actions/workflows/gen_cc_mod_shell_checker.yml/badge.svg)](https://github.com/vroncevic/gen_cc_mod/actions/workflows/gen_cc_mod_shell_checker.yml)
 
 The README is used to introduce the modules and provide instructions on
 how to install the modules, any machine dependencies it may have and any
