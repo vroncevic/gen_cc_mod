@@ -1,6 +1,6 @@
-<img align="right" src="https://raw.githubusercontent.com/vroncevic/gen_cc_mod/dev/docs/gen_cc_mod_logo.png" width="25%">
-
 # Generate C++ Module
+
+<img align="right" src="https://raw.githubusercontent.com/vroncevic/gen_cc_mod/dev/docs/gen_cc_mod_logo.png" width="25%">
 
 **gen_cc_mod** is shell tool for generating C++ modules.
 
@@ -35,7 +35,7 @@ Navigate to release **[page](https://github.com/vroncevic/gen_cc_mod/releases)**
 
 To install **gen_cc_mod** type the following
 
-```
+```bash
 tar xvzf gen_cc_mod-x.y.tar.gz
 cd gen_cc_mod-x.y
 cp -R ~/sh_tool/bin/   /root/scripts/gen_cc_mod/ver.x.y/
@@ -44,7 +44,8 @@ cp -R ~/sh_tool/log/   /root/scripts/gen_cc_mod/ver.x.y/
 ```
 
 Self generated setup script and execution
-```
+
+```bash
 ./gen_cc_mod_setup.sh 
 
 [setup] installing App/Tool/Script gen_cc_mod
@@ -79,7 +80,7 @@ Or You can use docker to create image/container.
 
 ### Usage
 
-```
+```bash
 # Create symlink for shell tool
 ln -s /root/scripts/gen_cc_mod/ver.x.y/bin/gen_cc_mod.sh /root/bin/gen_cc_mod
 
@@ -155,7 +156,8 @@ Sun 05 Dec 2021 01:33:41 PM CET
 **gen_cc_mod** is based on MOP.
 
 Shell tool structure
-```
+
+```bash
 sh_tool/
 ├── bin/
 │   ├── center.sh
