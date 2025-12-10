@@ -47,7 +47,7 @@ To install **gen_cc_mod** type the following
 [setup] create symbolic link of App/Tool/Script
 [setup] done
 
-/root/scripts/gen_cc_mod/ver.3.0/
+/root/scripts/gen_cc_mod/ver.4.0/
 ├── bin/
 │   └── gen_cc_mod.sh
 ├── conf/
@@ -62,7 +62,7 @@ To install **gen_cc_mod** type the following
     └── gen_cc_mod.log
 
 5 directories, 8 files
-lrwxrwxrwx 1 root root 50 Dec  3 19:51 /root/bin/gen_cc_mod -> /root/scripts/gen_cc_mod/ver.3.0/bin/gen_cc_mod.sh
+lrwxrwxrwx 1 root root 50 Dec  3 19:51 /root/bin/gen_cc_mod -> /root/scripts/gen_cc_mod/ver.4.0/bin/gen_cc_mod.sh
 ```
 
 Or You can use docker to create image/container.
@@ -71,7 +71,7 @@ Or You can use docker to create image/container.
 
 ```bash
 # Create symlink for shell tool
-ln -s /root/scripts/gen_cc_mod/ver.3.0/bin/gen_cc_mod.sh /root/bin/gen_cc_mod
+ln -s /root/scripts/gen_cc_mod/ver.4.0/bin/gen_cc_mod.sh /root/bin/gen_cc_mod
 
 # Setting PATH
 export PATH=${PATH}:/root/bin/
@@ -79,7 +79,7 @@ export PATH=${PATH}:/root/bin/
 # Generating module-pair (source+header file)
 gen_cc_mod GTKMyOption
 
-gen_cc_mod ver.3.0
+gen_cc_mod ver.4.0
 Wed Dec  3 07:52:22 PM CET 2025
 
 [check_root] Check permission for current session? [ok]
@@ -97,7 +97,7 @@ Wed Dec  3 07:52:22 PM CET 2025
     █████  ░░░░░░ ░░░   ░░ ░░░░░  ░░░░░   ░░░░░  ░░░░░ ░░░  ░░  ░░  ░░░░░░   ░░░░░░   
    ░░░░░                                                                               
     	                                                     
-    		Info   github.io/gen_cc_mod ver.3.0 
+    		Info   github.io/gen_cc_mod ver.4.0 
     		Issue  github.io/issue
     		Author vroncevic.github.io
 
@@ -105,13 +105,13 @@ Wed Dec  3 07:52:22 PM CET 2025
 100% [================================================]
 
 [load_conf] Loading App/Tool/Script configuration!
-[check_cfg] Checking configuration file [/root/scripts/gen_cc_mod/ver.3.0/conf/gen_cc_mod.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/gen_cc_mod/ver.4.0/conf/gen_cc_mod.cfg] [ok]
 [check_cfg] Done
 
 [load_conf] Done
 
 [load_util_conf] Load module configuration!
-[check_cfg] Checking configuration file [/root/scripts/gen_cc_mod/ver.3.0/conf/gen_cc_mod_util.cfg] [ok]
+[check_cfg] Checking configuration file [/root/scripts/gen_cc_mod/ver.4.0/conf/gen_cc_mod_util.cfg] [ok]
 [check_cfg] Done
 
 [load_util_conf] Done
@@ -121,7 +121,7 @@ Wed Dec  3 07:52:22 PM CET 2025
 [gen_cc_mod] Generating file [.editorconfig]
 [gen_cc_mod] Set owner!
 [gen_cc_mod] Set permission!
-[logging] Checking directory [/root/scripts/gen_cc_mod/ver.3.0/log/]? [ok]
+[logging] Checking directory [/root/scripts/gen_cc_mod/ver.4.0/log/]? [ok]
 [logging] Write info log!
 [logging] Done
 
@@ -172,7 +172,7 @@ More documentation and info at
 
 ### Copyright and licence
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-4.0) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Copyright (C) 2017 - 2026 by [vroncevic.github.io/gen_cc_mod](https://vroncevic.github.io/gen_cc_mod)
 
